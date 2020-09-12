@@ -34,6 +34,7 @@ export default function BasicMeta({
       />
       {author ? <meta name="author" content={author} /> : null}
       <link rel="canonical" href={config.base_url + url} />
+      {url === '/' ? <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"/> : null}
     </Head>
   );
 }
