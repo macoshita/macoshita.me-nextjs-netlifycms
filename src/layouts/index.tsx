@@ -19,7 +19,7 @@ type Props = {
   date: Date;
   slug: string;
   description: string;
-  tags: string[];
+  tags: string[] | undefined;
   author: string;
 };
 export default function Index({
@@ -30,7 +30,7 @@ export default function Index({
   tags,
   description,
 }: Props) {
-  const keywords = tags.map((it) => getTag(it).name);
+  const keywords = tags?.map((it) => getTag(it).name);
   const authorName = getAuthor(author).name;
   return ({ children: content }) => {
     return (
@@ -74,7 +74,7 @@ export default function Index({
             </header>
             <div className={styles.content}>{content}</div>
             <ul className={"tag-list"}>
-              {tags.map((it, i) => (
+              {tags?.map((it, i) => (
                 <li key={i}>
                   <TagButton tag={getTag(it)} />
                 </li>
@@ -92,7 +92,7 @@ export default function Index({
           {`
             .container {
               display: block;
-              max-width: 36rem;
+              max-width: 48rem;
               width: 100%;
               margin: 0 auto;
               padding: 0 1.5rem;
