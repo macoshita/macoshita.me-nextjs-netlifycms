@@ -23,3 +23,34 @@ ISUCON 5 から 8 までは ruby で参加していて、去年は「ISUCON で�
 ## はじまり
 
 SSH 接続に少々苦労したけど、基本的にはレギュレーションに書かれていた方法で接続できた。
+
+SSH Config を書けば VSCode SSH で接続できるようになるので、すんなり開発スタート。メンバーが github にコミットできるようにしてくれたので、バックアップを取りつつ基本はサーバ直書き。
+
+ブラウザから見れるようにするところは、下記のようなコマンドにした。運営から案内されてるやつではつなげなかった。ngrok 使ったという random の投稿をみて「なるほど～」とおもった
+
+```shell
+ssh -N isucon-server -J isucon-bastion -L 8080:localhost:80
+```
+
+で、早速問題が。 **TypeScript じゃねーじゃん！ってか Deno？！** 
+
+……たしかに、JavaScript は node.js, TypeScript は Deno とすれば、TypeScript でやりたくない人の希望にも添えるんだろうけど、マジかーとなった。  
+で、Deno で勝てるとは到底思えない（マニュアルにも不具合があるって書いてあったし）ので、node.js 実装を TypeScript 化するアプローチをとった。
+
+- app.js を app.ts にする
+- tsc --init で tsconfig 作って target を esnext に
+- VSCode の quickfix で型定義を全部インストール
+
+
+
+
+
+
+
+
+
+
+
+
+
+
