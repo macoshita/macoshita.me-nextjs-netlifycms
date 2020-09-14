@@ -12,6 +12,7 @@ import TwitterCardMeta from "../components/meta/TwitterCardMeta";
 import { SocialList } from "../components/SocialList";
 import TagButton from "../components/TagButton";
 import { getAuthor } from "../lib/authors";
+import config from "../lib/config";
 import { getTag } from "../lib/tags";
 
 type Props = {
@@ -50,6 +51,7 @@ export default function Index({
           url={`/posts/${slug}`}
           title={title}
           description={description}
+          image={`${config.base_url}/og-image/${slug}.png`}
         />
         <JsonLdMeta
           url={`/posts/${slug}`}

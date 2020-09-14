@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export -o ./dist",
+    "gen:og:image": "ts-node --project tsconfig.node.json ./gen-og-image.ts",
+    "export": "next build && next export -o ./dist && npm run gen:og:image",
     "test": "jest"
   },
   "dependencies": {
@@ -29,10 +30,15 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.9",
+    "@types/mkdirp": "^1.0.1",
     "@types/node": "^13.11.0",
+    "@types/puppeteer": "^3.0.2",
     "@types/react": "^16.9.32",
     "jest": "^26.3.0",
+    "mkdirp": "^1.0.4",
+    "puppeteer": "^5.3.0",
     "ts-jest": "^26.2.0",
+    "ts-node": "^9.0.0",
     "typescript": "^3.8.3",
     "yaml-loader": "^0.6.0"
   }

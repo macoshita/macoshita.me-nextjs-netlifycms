@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Kosugi Maru', sans-serif;
+    }
+    .container {
+      position: absolute;
+      background-color: #16161a;
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+    }
+    .header {
+      position: absolute;
+      display: flex;
+      margin: 32px;
+    }
+    .header-btn {
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      margin-right: 16px;
+    }
+    .red {
+      background-color: #ff605c;
+    }
+    .yellow {
+      background-color: #ffbd44;
+    }
+    .green {
+      background-color: #00ca4e;
+    }
+    .main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 64px;
+      color: #fffffe;
+    }
+    #title {
+      font-size: 80px;
+      margin-bottom: 32px;
+    }
+    #description {
+      font-size: 32px;
+      color: #94a1b2;
+    }
+    .corner {
+      background-color: #2cb67d;
+      width: 160px;
+      height: 160px;
+      transform: rotate(-45deg);
+    }
+    .corner-left-top {
+      position: absolute;
+      top: -80px;
+      left: -80px;
+    }
+    .corner-right-bottom {
+      position: absolute;
+      bottom: -80px;
+      right: -80px;
+    }
+    .author {
+      position: absolute;
+      right: 80px;
+      bottom: 80px;
+      font-size: 48px;
+      text-align: right;
+      color: #fffffe;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="corner corner-left-top"></div>
+    <div class="corner corner-right-bottom"></div>
+    <div class="main">
+      <div id="title">
+      </div>
+      <div id="description">
+      </div>
+    </div>
+    <div class="author">@macoshita</div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Kosugi Maru']
+      }
+    });
+  </script>
+</body>
+</html>
