@@ -1,13 +1,13 @@
 {
   "base_url": "https://macoshita.me",
-  "site_title": "Next.js Netlify Blog",
-  "site_description": "Next.js blog template for Netlify",
+  "site_title": "@macoshita",
+  "site_description": "About @macoshita",
   "site_keywords": [
     {
-      "keyword": "Next.js"
+      "keyword": "Flutter"
     },
     {
-      "keyword": "Netlify"
+      "keyword": "Vue"
     },
     {
       "keyword": "React"
